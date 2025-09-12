@@ -1,3 +1,12 @@
 Syntax :
 kubectl [command] [TYPE] [NAME] [flags]
 
+# Creating pods in imperative way (using namespace also )
+
+kubectl create namespace nisha                      → Create a new namespace called `nisha`.
+kubectl get namespace                               → List all namespaces in the cluster.
+kubectl run mypod1 --image=nginx:latest -n nisha    → Create a pod named `mypod1` in the `nisha` namespace using the `nginx:latest` image.
+kubectl get pods                                    → List all pods in the **default** namespace.
+kubectl get pods -n nisha                           → List all pods in the `nisha` namespace.
+kubectl delete pods mypod1 -n nisha                 → Delete the pod `mypod1` from the `nisha` namespace.
+kubectl get pods -n nisha                           → Verify that no pods are present in the `nisha` namespace.
