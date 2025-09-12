@@ -1,0 +1,3 @@
+Syntax :
+kubectl [command] [TYPE] [NAME] [flags]
+
