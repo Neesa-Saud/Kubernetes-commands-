@@ -1,0 +1,6 @@
+# Elements of Kubernetes YAML File
+
+apiVersion    →   API version for the object.
+kind          →   Type of object (e.g., Pod, Deployment, Service, ReplicaSet, etc.).
+metadata      →   Metadata about the object such as name, labels, and annotations.
+spec          →   The desired state/configuration of the object.
