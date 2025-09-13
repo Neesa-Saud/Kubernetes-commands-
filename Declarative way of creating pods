@@ -22,3 +22,6 @@ kubectl get pods -n <namespace> -o=yaml               → Get the full YAML outp
 kubectl delete -f <file.yaml>                         → Delete resource defined in the YAML file.
 kubectl get pods -n <namespace> -o=yaml > y1.yaml     → required yaml conents will be added in y1.yaml
 kubectl exec -it <podname> -n <namespace> -- sh       → to go inside running pod
+kubectl expose pod/mypod1 -n nisha --type="NodePort" --port=8081 --target-port=80  → Expose pod `mypod1` in namespace `nisha` as a NodePort service, mapping service port 8081 to container port 80.
+minikube service nginx01 -n nisha --url               → Get the external URL of the service `nginx01` running in namespace `nisha` (accessible from browser).
+
