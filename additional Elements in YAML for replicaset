@@ -1,0 +1,7 @@
+replicas                 ➔ Number of Pods to run
+selector                 ➔ Tells ReplicaSet/Deployment which Pods it controls (by matching labels)
+template                 ➔ Describes the Pods to create
+template.metadata.labels ➔ Labels that will be attached to the Pods
+template.spec            ➔ The spec for the Pod, like what container(s) to run
+containers               ➔ List of containers to run in each Pod
+image                    ➔ Docker image to use for the container
