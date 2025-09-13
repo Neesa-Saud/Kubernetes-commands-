@@ -5,3 +5,26 @@ template.metadata.labels ➔ Labels that will be attached to the Pods
 template.spec            ➔ The spec for the Pod, like what container(s) to run
 containers               ➔ List of containers to run in each Pod
 image                    ➔ Docker image to use for the container
+
+Example YAML file :
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replica01
+  labels:
+    type: frontend
+  namespace: nisha
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: php
+  template:
+    metadata:
+      labels:
+       type: php
+    spec:
+      containers:
+       - name: phpcontainer
+         image: phpimg
