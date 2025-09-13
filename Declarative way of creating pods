@@ -20,3 +20,4 @@ kubectl get pods -n <namespace> -o=wide               → List all pods with det
 kubectl get pods <podname> -n <namespace> -o=wide     → Get detailed information of a specific pod in the namespace.
 kubectl get pods -n <namespace> -o=yaml               → Get the full YAML output of all pods in the namespace.
 kubectl delete -f <file.yaml>                         → Delete resource defined in the YAML file.
+kubectl get pods -n <namespace> -o=yaml > y1.yaml     → required yaml conents will be added in y1.yaml
