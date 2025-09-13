@@ -1,0 +1,5 @@
+kubectl create -f file.yaml            ➔ create the replicas          
+kubectl get replicaset                 ➔ List all ReplicaSets in the current namespace
+kubectl get replicaset -n <namespace>  ➔ List ReplicaSets in a specific namespace
+kubectl get replicaset -o=wide         ➔ Show ReplicaSets with more details (like selector, labels)
+kubectl get replicaset -o=yaml         ➔ Output ReplicaSets in YAML format
