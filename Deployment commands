@@ -1,10 +1,17 @@
-kubectl create -f <file.yaml> -n <namespace-name>         ➔ creates the pods according to yaml file
-kubectl apply -f <file.yaml> -n <namespace-name>          ➔ apply the changes made in yaml file
-kubectl get deployments                                   ➔ List all Deployments in the current namespace
-kubectl get deployments -n <namespace>                    ➔ List Deployments in a specific namespace
-kubectl get deployments -o wide                           ➔ Show Deployments with more details (like pods, selectors)
-kubectl get deployments -o yaml                           ➔ Output Deployments in YAML format
-kubectl describe deployments <deployment-name>            ➔ Show detailed info about a specific Deployment
-kubectl scale deployment <deployment-name> --replicas=N   ➔ Scale a Deployment to N replicas (pods)
+kubectl create -f <file.yaml> -n <namespace-name>                   ➔ creates the pods according to yaml file
+kubectl apply -f <file.yaml> -n <namespace-name>                    ➔ apply the changes made in yaml file
+kubectl get deployments                                             ➔ List all Deployments in the current namespace
+kubectl get deployments -n <namespace>                              ➔ List Deployments in a specific namespace
+kubectl get deployments -o wide                                     ➔ Show Deployments with more details (like pods, selectors)
+kubectl get deployments -o yaml                                     ➔ Output Deployments in YAML format
+kubectl describe deployments <deployment-name>                      ➔ Show detailed info about a specific Deployment
+kubectl scale deployment <deployment-name> --replicas=N             ➔ Scale a Deployment to N replicas (pods)
 kubectl set image deployment/<deployment-name> <container-name>=<new-image> -n dev 
-                                                         ➔ Update the container image of a Deployment in the "dev" namespace
+                                                                    ➔ Update the container image of a Deployment in the "dev" namespace
+kubectl rollout status deployment/<deployment-name>                 ➔ Check the status of a Deployment rollout
+kubectl rollout pause deployment/<deployment-name>                  ➔ Pause a Deployment rollout (useful during updates)
+kubectl rollout resume deployment/<deployment-name>                 ➔ Resume a paused Deployment rollout
+kubectl rollout undo deployment/<deployment-name>                   ➔ Roll back a Deployment to the previous version
+kubectl get pods --selector=app=<label>                             ➔ List Pods that match a specific label
+kubectl rollout history deployment <deployment-name>                ➔ View rollout history (revisions) of a Deployment
+kubectl rollout undo deployment <deployment-name> --to-revision=N   ➔ Roll back a Deployment to a specific revision number
