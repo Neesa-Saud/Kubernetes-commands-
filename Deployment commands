@@ -1,3 +1,5 @@
+kubectl create -f <file.yaml> -n <namespace-name>         ➔ creates the pods according to yaml file
+kubectl apply -f <file.yaml> -n <namespace-name>          ➔ apply the changes made in yaml file
 kubectl get deployments                                   ➔ List all Deployments in the current namespace
 kubectl get deployments -n <namespace>                    ➔ List Deployments in a specific namespace
 kubectl get deployments -o wide                           ➔ Show Deployments with more details (like pods, selectors)
