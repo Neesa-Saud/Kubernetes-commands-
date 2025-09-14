@@ -10,3 +10,4 @@ kubectl get pods                                    → List all pods in the **d
 kubectl get pods -n nisha                           → List all pods in the `nisha` namespace.
 kubectl delete pods mypod1 -n nisha                 → Delete the pod `mypod1` from the `nisha` namespace.
 kubectl get pods -n nisha                           → Verify that no pods are present in the `nisha` namespace.
+kubectl describe pods <podname> -n namespace-name   → describes the pod 
