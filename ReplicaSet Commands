@@ -1,5 +1,8 @@
-kubectl create -f file.yaml            ➔ create the replicas          
-kubectl get replicaset                 ➔ List all ReplicaSets in the current namespace
-kubectl get replicaset -n <namespace>  ➔ List ReplicaSets in a specific namespace
-kubectl get replicaset -o=wide         ➔ Show ReplicaSets with more details (like selector, labels)
-kubectl get replicaset -o=yaml         ➔ Output ReplicaSets in YAML format
+kubectl create -f file.yaml                                       ➔ create the replicas          
+kubectl get replicaset                                            ➔ List all ReplicaSets in the current namespace
+kubectl get replicaset -n <namespace>                             ➔ List ReplicaSets in a specific namespace
+kubectl get replicaset -o=wide                                    ➔ Show ReplicaSets with more details (like selector, labels)
+kubectl get replicaset -o=yaml                                    ➔ Output ReplicaSets in YAML format
+kubectl describe replicaset <replicaset-name>                     ➔ Show detailed information about a ReplicaSet
+kubectl scale replicaset <replicaset-name> --replicas=<number>    ➔ Scale the ReplicaSet to the desired number of Pods
+kubectl delete rs <replicaset-name>                               ➔ Delete a ReplicaSet (and its Pods, unless --cascade=orphan is used)
