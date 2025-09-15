@@ -1,0 +1,33 @@
+Example :
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: srv01
+  namespace: nisha
+spec:
+  type: NodePort or ClusterIP
+  selector:
+    type: php
+  ports:
+    - port: 80
+      targetPort: 3000
+
+Some Commands:
+kubectl expose pod <pod-name> --port=<port> --target-port=<targetPort> --name=<service-name>               ➝ Create a Service for a Pod
+kubectl expose deployment <deployment-name> --type=NodePort --port=<port>                                  ➝ Create a NodePort Service for a Deployment
+kubectl create -f service.yaml                                                                             ➝ Create Service from YAML file
+kubectl apply -f service.yaml                                                                              ➝ Create or update Service from YAML file
+kubectl get services                                                                                       ➝ List all Services in current namespace
+kubectl get svc -n <namespace>                                                                             ➝ List all Services in a specific namespace
+kubectl describe service <service-name>                                                                    ➝ Show detailed info about a Service
+kubectl delete service <service-name>                                                                      ➝ Delete a Service by name
+kubectl edit service <service-name>                                                                        ➝ Edit Service configuration in-place
+
+
+🔹 Service Access Commands
+
+minikube service <service-name>                                             ➝ Open Service in browser (only with minikube)
+minikube service <service-name> --url                                       ➝ Get URL for Service (only with minikube)
+kubectl port-forward svc/<service-name> <local-port>:<service-port>         ➝ Forward local port to Service port
+kubectl get endpoints <service-name>                                        ➝ Show Pod IPs linked to the Service
