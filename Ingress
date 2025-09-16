@@ -1,1 +1,11 @@
+Kubernetes Ingress Example: 
 
+ minikube addons enable ingress                                                               → Enable Ingress Controller in Minikube
+kubectl create namespace dev                                                                  → Create a namespace 'dev'
+kubectl create deployment app1 --image=nginx:latest --replicas=1 -n dev                       → Create deployment 'app1' with Nginx
+kubectl expose deployment app1 --port=80 --target-port=80 --type=ClusterIP -n dev             → Expose 'app1' as ClusterIP service
+kubectl create deployment app2 --image=nginx:latest --replicas=1 -n dev                       → Create deployment 'app2' with Nginx
+kubectl expose deployment app2 --port=80 --target-port=80 --type=ClusterIP -n dev             → Expose 'app2' as ClusterIP service
+kubectl apply -f ingress.yaml                                                                 → Create Ingress resource for app1 & app2
+minikube ip                                                                                   → Get Minikube IP address
+<minikubeip> nisha.com                                                     
