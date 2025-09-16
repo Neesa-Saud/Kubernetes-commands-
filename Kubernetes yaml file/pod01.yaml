@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod01
+  namespace: nisha
+  labels:
+    type: php
+spec:
+  containers:
+   - name: phpcontainer
+     image: httpd
+     volumeMounts:
+      - mountPath: "/user/share/nginx/html"
+        name: storage
+  volumes:
+   - name: storage
+     persistentVolumeClaim:
+       claimName: pvc01
