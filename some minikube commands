@@ -1,0 +1,4 @@
+minikube ssh                                       ➝ Open an SSH session inside the Minikube VM to explore/debug files.  
+minikube mount "D:/kubernetesp/html:/html"         ➝ Mount local Windows folder (D:/kubernetesp/html) into Minikube VM at /html.  
+minikube tunnel                                    ➝ Create a network tunnel to expose LoadBalancer services with an external IP.  
+minikube addons enable ingress                     ➝ Enable the NGINX Ingress controller inside Minikube for Ingress resources.  
